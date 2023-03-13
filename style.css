@@ -1,0 +1,328 @@
+:root {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Tahoma';
+  font-size: 18px;
+  line-height: 1.333333;
+  color: #000000;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+.layout-container {
+  padding: 0 16px;
+}
+
+.header {
+  font-size: 48px;
+  line-height: 1.207083;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 64px;
+  margin-bottom: 32px;
+  color: #363636;
+}
+
+.form {
+  margin: 0 auto 66px;
+  background: #e4e5ff;
+  max-width: 760px;
+  border-radius: 16px;
+  padding: 32px 63px;
+}
+
+#field-phone,
+#field-phone-err {
+  font-weight: 400;
+}
+
+.control {
+  /* спільний клас для усіх інпутів, щоб не вводити кожен  окремо */
+  background: #f9fbff;
+  border: 3px solid #eabeff;
+  border-radius: 8px;
+  outline: 0;
+  width: 100%;
+  padding: 13px;
+  /* 16px - 3px border */
+  line-height: inherit;
+  color: #1f1f1f;
+  font-weight: bold;
+}
+
+.control:focus {
+  border-color: #d885ff;
+  -webkit-box-shadow: 0px 0px 20px 0px #7cabff4d;
+  box-shadow: 0px 0px 20px 0px #7cabff4d;
+}
+
+input.control,
+select.control {
+  max-width: 450px;
+}
+
+::-webkit-input-placeholder {
+  color: #cad5ea;
+  font-weight: 400;
+}
+
+::-moz-placeholder {
+  color: #cad5ea;
+  font-weight: 400;
+}
+
+:-ms-input-placeholder {
+  color: #cad5ea;
+  font-weight: 400;
+}
+
+::-ms-input-placeholder {
+  color: #cad5ea;
+  font-weight: 400;
+}
+
+::placeholder {
+  color: #cad5ea;
+  font-weight: 400;
+}
+
+.field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.field>label {
+  font-size: 24px;
+  line-height: 1.207083;
+  font-weight: 700;
+  margin: 0 16px 8px;
+}
+
+.field>label[for],
+.field.checkbox,
+.field.radio {
+  cursor: pointer;
+}
+
+.field.required>label::after {
+  content: ' *';
+  color: #af1414;
+}
+
+.field+.field {
+  /*  застосовується, щоб відсуп не застосовувався до першого обгортаючого  елемента div */
+  margin-top: 32px;
+}
+
+.field.error>.error-message {
+  margin: 8px 16px 0;
+  color: #e42a11;
+}
+
+/* RADIO BUTTON */
+
+.field>.radio,
+.field.no-label>.checkbox {
+  margin: 0;
+  position: relative;
+}
+
+.field>.radio {
+  font-size: 18px;
+  line-height: 1.333333;
+  font-weight: 400;
+}
+
+.field>.radio:last-child {
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.radio {
+  padding: 12px 16px;
+  padding-left: 40px;
+  /* 16px - відступ від краю до radio, 16рх - щирина radio, 8рх - відступ від прапорця до тексту */
+}
+
+.radio:last-child {
+  padding: 10.5px 16px;
+  padding-left: 40px;
+  /* 16px - відступ від краю до radio, 16рх - щирина radio, 8рх - відступ від прапорця до тексту */
+}
+
+.radio>input {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+
+/* SELECT CITY */
+
+select.control {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url(arrow-down.png);
+  background-position: right 13px top 50%;
+  /*  вирівнювання відбуваєьбся відносно правого верхнього кутка */
+  background-repeat: no-repeat;
+  /* щоб іконка не повторювалась */
+  cursor: pointer;
+}
+
+/* TEXT AREA */
+
+textarea.control {
+  resize: vertical;
+}
+
+/* CHECKBOX */
+.field+.no-label {
+  margin-top: 8px;
+}
+
+.field.no-label>label {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.checkbox {
+  padding: 10.5px 0;
+  padding-left: 24px;
+  /* 16px - прапорець, 8рх - відстань від тексту до прапорця */
+}
+
+.checkbox>input {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  /* у прапорця немає відступу від лівої межі */
+}
+
+/* ICONS */
+
+.icon-name,
+.icon-email,
+.icon-phone {
+  background-repeat: no-repeat;
+  background-position: 13px 50%;
+  padding-left: 45px;
+  /*48px - 3px border */
+}
+
+.icon-name {
+  background-image: url(icon-account.png);
+}
+
+.icon-email {
+  background-image: url(icon-email.png);
+}
+
+.icon-phone {
+  background-image: url(icon-phone.png);
+}
+
+/* BUTTONS */
+
+.form-actions {
+  margin: 16px -16px -16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+.form-actions>* {
+  margin: 16px;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 301px;
+  flex: 1 1 301px;
+}
+
+.btn-reset,
+.btn-submit {
+  border: 0;
+  border-radius: 8px;
+  outline: none;
+  padding: 16px 24px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: bold;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.btn-reset::before,
+.btn-submit::before {
+  content: '';
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.btn-reset {
+  background-color: #fffcff;
+}
+
+.btn-reset::before {
+  background-image: url(btn-reset.png);
+}
+
+.btn-reset:hover,
+.btn-reset:focus {
+  background-color: #ffd7d7;
+  transition: 0.4s;
+}
+
+.btn-reset:active {
+  background-color: #ff8686;
+
+}
+
+.btn-submit {
+  background: #9e36cf;
+  color: #ffffff;
+}
+
+.btn-submit::before {
+  background-image: url(btn-send.png);
+}
+
+.btn-submit:hover,
+.btn-submit:focus {
+  background-color: #b353ee;
+  transition: 0.4s;
+}
+
+.btn-submit:active {
+  background-color: #822caa;
+}
